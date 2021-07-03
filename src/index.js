@@ -10,6 +10,11 @@
 
     // initialise middleware
 
+    var ExMidware = function (req, res, next) {
+        console.log('Middleware called');
+        next();
+    }
+
     app.use(cors());
     app.use(morgan("common"));
     app.use(
@@ -18,6 +23,8 @@
         })
     );
     app.use(bodyParser.json());
+    app.use(ExMidware);
+
 
     mongoClient.connect(
         dbHostUrl + config.db_name,
