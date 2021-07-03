@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "422773d6-3f30-463b-94e4-b2b1bc31583a",
+		"name": "Example Pokemon Finder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add pokemon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Gengar2\",\r\n    \"coords\":{\r\n        \"x\":50.00,\r\n        \"y\":50.0\r\n    },\r\n    \"address\":\"Earth\",\r\n    \"type\":\"Ghost\",\r\n    \"level\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/admin/pokemon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"admin",
+						"pokemon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pokemon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/pokemon?x=73.00&y=24.00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pokemon"
+					],
+					"query": [
+						{
+							"key": "x",
+							"value": "73.00"
+						},
+						{
+							"key": "y",
+							"value": "24.00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pokemon",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"60e0214bc27be95600029399\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/admin/pokemon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"admin",
+						"pokemon"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
